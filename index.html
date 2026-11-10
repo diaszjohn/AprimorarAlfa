@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agendamento da autoescola Aprimorar - Instrutor autônomo.">
+    <title>Aprimorar | Instrutor Autônomo</title>
+    <link rel="icon" href="img/aprimorar.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- CABEÇALHO -->
+    <header class="cabecalho"> 
+        <div class="container cabecalho-conteudo"> 
+            <a class="logo" href="#inicio">
+                <img src="img/aprimorar.jpg" alt="Logo Aprimorar">
+                <span>Aprimorar</span>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#orcamento">Monte seu Orçamento</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        
+        <!-- SEÇÃO 1: Hero -->
+        <section class="hero" id="inicio"> 
+            <div class="container hero-conteudo">
+                <div>
+                    <p class="destaque">Instrutor Credenciado</p>
+                    <h1>Atendimento autônomo e exclusivo.</h1>
+                    <p class="hero-texto">
+                        Monte seu pacote personalizado, selecione taxas, exames e aulas práticas com transparência total!
+                    </p>
+                    <a class="botao" href="#orcamento">Monte seu orçamento</a>
+                </div>
+                <div class="hero-ilustracao">
+                    <img src="img/aprimorar.png" alt="Imagem da Autoescola Aprimorar">
+                </div> 
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: MONTE SEU ORÇAMENTO (Interativo) -->
+        <section class="secao-orcamento" id="orcamento">
+            <div class="container">
+                <div class="titulo-secao">
+                    <span class="destaque">Personalizado</span>
+                    <h2>Monte seu Orçamento</h2> 
+                    <p>Selecione abaixo o que você precisa. O valor total é calculado na hora para você enviar direto no WhatsApp.</p>
+                </div>
+
+                <div class="orcamento-grid">
+                    
+                    <!-- Coluna da Esquerda: As Opções -->
+                    <div class="opcoes-container">
+                        
+                        <!-- Bloco 1: Taxas e Exames (Checkboxes) -->
+                        <div class="bloco-escolha">
+                            <h3>1. Taxas e Exames Obrigatórios</h3>
+                            <p class="sub-texto">Marque o que você precisa realizar:</p>
+                            
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="check-item" data-nome="Taxa do Detran" data-valor="371.25">
+                                <div class="info-checkbox">
+                                    <span class="nome-servico">Taxa do Detran</span>
+                                    <span class="preco-servico">R$ 371,25</span>
+                                </div>
+                            </label>
+
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="check-item" data-nome="Exame Toxicológico" data-valor="130.00">
+                                <div class="info-checkbox">
+                                    <span class="nome-servico">Exame Toxicológico</span>
+                                    <span class="preco-servico">R$ 130,00</span>
+                                </div>
+                            </label>
+
+                            <label class="item-checkbox">
+                                <input type="checkbox" class="check-item" data-nome="Exames Psicológico e Médico" data-valor="180.00">
+                                <div class="info-checkbox">
+                                    <span class="nome-servico">Exames Psicológico e Médico</span>
+                                    <span class="preco-servico">R$ 180,00</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Bloco 2: Aulas Práticas (Radio Buttons - Escolhe apenas um) -->
+                        <div class="bloco-escolha">
+                            <h3>2. Pacote de Aulas Práticas</h3>
+                            <p class="sub-texto">Escolha o seu plano de treinamento:</p>
+                            
+                            <label class="item-radio">
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Opção 1 (2h Moto + 2h Carro)" data-valor="500.00" checked>
+                                <div class="info-radio">
+                                    <div>
+                                        <span class="nome-servico">Opção 1 (Compacto)</span>
+                                        <p class="detalhe-pacote">🏍️ 2h de moto + 🚗 2h de carro</p>
+                                    </div>
+                                    <span class="preco-servico">R$ 500,00</span>
+                                </div>
+                            </label>
+
+                            <label class="item-radio">
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Opção 2 (5h Moto + 7h Carro)" data-valor="800.00">
+                                <div class="info-radio">
+                                    <div>
+                                        <span class="nome-servico">Opção 2 (Completo - Mais popular)</span>
+                                        <p class="detalhe-pacote">🏍️ 5h de moto + 🚗 7h de carro</p>
+                                    </div>
+                                    <span class="preco-servico">R$ 800,00</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Coluna da Direita: Resumo e Formulário de Envio -->
+                    <div class="resumo-card">
+                        <h3>Resumo do Investimento</h3>
+                        
+                        <div id="lista-resumo" class="lista-resumo">
+                            <!-- Preenchido via JavaScript -->
+                        </div>
+
+                        <div class="total-container">
+                            <span>Valor Total Estimado:</span>
+                            <strong id="valor-total">R$ 871,25</strong>
+                        </div>
+
+                        <!-- Dados do Aluno para o WhatsApp -->
+                        <form id="form-whatsapp" class="form-zap">
+                            <div class="form-grupo">
+                                <label for="nome">Seu Nome:</label>
+                                <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                            </div>
+
+                            <div class="form-grupo">
+                                <label for="cidade">Sua Cidade:</label>
+                                <input type="text" id="cidade" value="Parnaíba - PI" required>
+                            </div>
+
+                            <button type="submit" class="botao-whatsapp">
+                                📲 Enviar Orçamento via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer id="contato"> 
+        <div class="container rodape-conteudo">
+            <div>
+                <strong>Aprimorar Instrutor Autônomo</strong>
+                <p>Atendimento credenciado com excelência em Parnaíba — PI.</p>
+            </div>
+            <div>
+                <p>Segunda a Sexta · 08h às 18h</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Conexão com o Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
