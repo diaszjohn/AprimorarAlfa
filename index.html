@@ -28,14 +28,14 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
         
-        <!-- SEÇÃO 1: Hero -->
+        <!-- SEÇÃO 1: TELA INICIAL -->
         <section class="hero" id="inicio"> 
             <div class="container hero-conteudo">
                 <div>
                     <p class="destaque">Instrutor Credenciado</p>
                     <h1>Atendimento autônomo e exclusivo.</h1>
                     <p class="hero-texto">
-                        Monte seu pacote personalizado, selecione taxas, exames e aulas práticas com transparência total!
+                        Monte seu pacote personalizado por categoria, selecione taxas, exames e aulas práticas com transparência total!
                     </p>
                     <a class="botao" href="#orcamento">Monte seu orçamento</a>
                 </div>
@@ -45,25 +45,64 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2: MONTE SEU ORÇAMENTO (Interativo) -->
+        <!-- SEÇÃO 2: ORÇAMENTO (Fluxo Vertical) -->
         <section class="secao-orcamento" id="orcamento">
             <div class="container">
-                <div class="titulo-secao">
+                <div class="titulo-secao text-center">
                     <span class="destaque">Personalizado</span>
                     <h2>Monte seu Orçamento</h2> 
-                    <p>Selecione abaixo o que você precisa. O valor total é calculado na hora para você enviar direto no WhatsApp.</p>
+                    <p>Siga o passo a passo abaixo. O valor total é calculado na hora para você enviar direto no WhatsApp.</p>
                 </div>
 
-                <div class="orcamento-grid">
+                <div class="orcamento-wrapper">
                     
-                    <!-- Coluna da Esquerda: As Opções -->
-                    <div class="opcoes-container">
+                    <!-- PASSO 1: CATEGORIA DA CNH -->
+                    <div class="bloco-escolha">
+                        <h3>1. Categoria da CNH</h3>
+                        <p class="sub-texto">Escolha o seu objetivo principal:</p>
                         
-                        <!-- Bloco 1: Taxas e Exames (Checkboxes) -->
-                        <div class="bloco-escolha">
-                            <h3>1. Taxas e Exames Obrigatórios</h3>
-                            <p class="sub-texto">Marque o que você precisa realizar:</p>
-                            
+                        <div class="grade-opcoes-grid">
+                            <label class="item-radio">
+                                <input type="radio" name="categoria" class="radio-categoria" data-nome="CNH B (Carro)" data-valor="0" checked>
+                                <div class="info-radio">
+                                    <img src="img/iconecarro.png" alt="Carro" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">CNH B (Carro)</span>
+                                        <p class="detalhe-pacote">Apenas veículos de quatro rodas</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="item-radio">
+                                <input type="radio" name="categoria" class="radio-categoria" data-nome="CNH A (Moto)" data-valor="0">
+                                <div class="info-radio">
+                                    <img src="img/iconemoto.png" alt="Moto" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">CNH A (Moto)</span>
+                                        <p class="detalhe-pacote">Apenas veículos de duas rodas</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="item-radio">
+                                <input type="radio" name="categoria" class="radio-categoria" data-nome="CNH A/B (Moto e Carro)" data-valor="0">
+                                <div class="info-radio">
+                                    <img src="img/iconecarromoto.png" alt="Carro e Moto" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">CNH A/B (Moto e Carro)</span>
+                                        <p class="detalhe-pacote">Ambas as categorias combinadas</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- PASSO 2: TAXAS E OPÇÕES DO DETRAN -->
+                    <div class="bloco-escolha">
+                        <h3>2. Taxas e Opções do Detran</h3>
+                        <p class="sub-texto">Marque o que você precisa realizar:</p>
+                        
+                        <div class="grade-opcoes-grid">
                             <label class="item-checkbox">
                                 <input type="checkbox" class="check-item" data-nome="Taxa do Detran" data-valor="371.25">
                                 <div class="info-checkbox">
@@ -88,29 +127,61 @@
                                 </div>
                             </label>
                         </div>
+                    </div>
 
-                        <!-- Bloco 2: Aulas Práticas (Radio Buttons - Escolhe apenas um) -->
-                        <div class="bloco-escolha">
-                            <h3>2. Pacote de Aulas Práticas</h3>
-                            <p class="sub-texto">Escolha o seu plano de treinamento:</p>
-                            
+                    <!-- PASSO 3: AULAS E VALORES -->
+                    <div class="bloco-escolha">
+                        <h3>3. Aulas e Valores (Avulsas ou Pacotes)</h3>
+                        <p class="sub-texto">Selecione o plano de aulas práticas desejado:</p>
+                        
+                        <div class="grade-opcoes-grid">
+                            <!-- Hora Aula Moto -->
                             <label class="item-radio">
-                                <input type="radio" name="pacote" class="radio-item" data-nome="Opção 1 (2h Moto + 2h Carro)" data-valor="500.00" checked>
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Hora-Aula Avulsa (Moto)" data-valor="100.00">
                                 <div class="info-radio">
-                                    <div>
-                                        <span class="nome-servico">Opção 1 (Compacto)</span>
-                                        <p class="detalhe-pacote">🏍️ 2h de moto + 🚗 2h de carro</p>
+                                    <img src="img/iconemoto.png" alt="Moto" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">Hora-Aula Avulsa (Moto)</span>
+                                        <p class="detalhe-pacote">Treinamento focado por hora</p>
+                                    </div>
+                                    <span class="preco-servico">R$ 100,00 / hora</span>
+                                </div>
+                            </label>
+
+                            <!-- Hora Aula Carro -->
+                            <label class="item-radio">
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Hora-Aula Avulsa (Carro)" data-valor="160.00">
+                                <div class="info-radio">
+                                    <img src="img/iconecarro.png" alt="Carro" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">Hora-Aula Avulsa (Carro)</span>
+                                        <p class="detalhe-pacote">Treinamento focado por hora</p>
+                                    </div>
+                                    <span class="preco-servico">R$ 160,00 / hora</span>
+                                </div>
+                            </label>
+
+                            <!-- Pacote A/B Compacto -->
+                            <label class="item-radio">
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Pacote A/B - Compacto (2h Moto + 2h Carro)" data-valor="500.00" checked>
+                                <div class="info-radio">
+                                    <img src="img/iconecarromoto.png" alt="Moto e Carro" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">Pacote A/B — Compacto</span>
+                                        <p class="detalhe-pacote">2h de moto + 2h de carro</p>
                                     </div>
                                     <span class="preco-servico">R$ 500,00</span>
                                 </div>
                             </label>
 
+                            <!-- Pacote A/B Completo -->
                             <label class="item-radio">
-                                <input type="radio" name="pacote" class="radio-item" data-nome="Opção 2 (5h Moto + 7h Carro)" data-valor="800.00">
+                                <input type="radio" name="pacote" class="radio-item" data-nome="Pacote A/B - Completo / Mais Popular (5h Moto + 7h Carro)" data-valor="800.00">
                                 <div class="info-radio">
-                                    <div>
-                                        <span class="nome-servico">Opção 2 (Completo - Mais popular)</span>
-                                        <p class="detalhe-pacote">🏍️ 5h de moto + 🚗 7h de carro</p>
+                                    <img src="img/iconecarromoto.png" alt="Moto e Carro" class="icone-img">
+                                    <div class="detalhe-texto">
+                                        <span class="nome-servico">Pacote A/B — Completo (Mais Popular)</span>
+                                        <p class="detalhe-pacote">5h de moto + 7h de carro</p>
                                     </div>
                                     <span class="preco-servico">R$ 800,00</span>
                                 </div>
@@ -118,9 +189,11 @@
                         </div>
                     </div>
 
-                    <!-- Coluna da Direita: Resumo e Formulário de Envio -->
-                    <div class="resumo-card">
-                        <h3>Resumo do Investimento</h3>
+                    <!-- PASSO 4: RESUMO E FORMULÁRIO DE ENVIO NO FINAL -->
+                    <div class="resumo-card-final" id="fechamento">
+                        <div class="resumo-cabecalho">
+                            <h3>📋 Resumo do Investimento</h3>
+                        </div>
                         
                         <div id="lista-resumo" class="lista-resumo">
                             <!-- Preenchido via JavaScript -->
@@ -128,19 +201,21 @@
 
                         <div class="total-container">
                             <span>Valor Total Estimado:</span>
-                            <strong id="valor-total">R$ 871,25</strong>
+                            <strong id="valor-total">R$ 500,00</strong>
                         </div>
 
                         <!-- Dados do Aluno para o WhatsApp -->
-                        <form id="form-whatsapp" class="form-zap">
-                            <div class="form-grupo">
-                                <label for="nome">Seu Nome:</label>
-                                <input type="text" id="nome" placeholder="Digite seu nome completo" required>
-                            </div>
+                        <form id="form-whatsapp" class="form-zap-final">
+                            <div class="form-grupo-linha">
+                                <div class="form-grupo">
+                                    <label for="nome">Seu Nome:</label>
+                                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                                </div>
 
-                            <div class="form-grupo">
-                                <label for="cidade">Sua Cidade:</label>
-                                <input type="text" id="cidade" value="Parnaíba - PI" required>
+                                <div class="form-grupo">
+                                    <label for="cidade">Sua Cidade:</label>
+                                    <input type="text" id="cidade" value="Parnaíba - PI" required>
+                                </div>
                             </div>
 
                             <button type="submit" class="botao-whatsapp">
